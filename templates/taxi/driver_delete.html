@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Confirm Deletion</title>
 </head>
 <body>
-
+  <h1>Confirm Deletion</h1>
+  <p>Are you sure you want to delete this driver?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+  </form>
 </body>
 </html>

@@ -1,10 +1,14 @@
+from django.contrib.auth.forms import UserCreationForm
 from .models import Driver
 from django import forms
 import re
 
 
-class DriverCreationForm(forms.ModelForm):
-    pass
+class DriverCreationForm(UserCreationForm):
+    class Meta:
+        model = Driver
+        fields = ["username", "first_name",
+                  "last_name", "license_number"]
 
 
 class DriverLicenseUpdateForm(forms.ModelForm):
